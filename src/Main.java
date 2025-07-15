@@ -1,12 +1,27 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Models.Airplane;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        /* kolekcje :
+        -list ( zachowana kolejnosć dodawania elementów, dozwolone duplikaty)
+        -set ( nie zachowuje koloejności dodawania elementów, brak duplikatów)
+        -map ( kolekcja klucz-wartość, unikalny klucz)
+        -queue(dequeue) (kolejka FIFO)
+         */
+        Airplane airplane = new Airplane(1,"Samolot1",200);
+        Airplane airplane1 = new Airplane(2,"Samolot2",300);
+        Airplane airplane2 = new Airplane(3,"Samolot3",100);
 
-        System.out.println("Hello and welcome!");
+        List<Airplane> airplanes = new ArrayList<Airplane>();
 
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("i = " + i);
+        airplanes.add(airplane);
+        airplanes.add(airplane1);
+        airplanes.add(airplane2);
+
+        for (Airplane a : airplanes) {
+            System.out.println(a.toString());
         }
     }
 }
