@@ -13,6 +13,7 @@ public class Main {
         Airplane airplane = new Airplane(1,"Samolot1",200);
         Airplane airplane1 = new Airplane(2,"Samolot2",300);
         Airplane airplane2 = new Airplane(3,"Samolot3",100);
+        Airplane airplane3 = new Airplane(4,"Samolot4",200);
 
         List<Airplane> airplanes = new ArrayList<Airplane>();
 
