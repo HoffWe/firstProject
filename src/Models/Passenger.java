@@ -7,7 +7,7 @@ public class Passenger {
     private String email;
     private int phoneNumber;
 
-//konstruktor-----------------------------------------------------------------------------------
+    //konstruktor-----------------------------------------------------------------------------------
     public Passenger(int idPassenger, String name, String surname, String email, int phoneNumber){
 
         this.passengerId = idPassenger;
@@ -61,4 +61,6 @@ public class Passenger {
     public void setPhoneNumber(int phoneNumber){
         this.phoneNumber = phoneNumber;
     }
+
+    //PASSENGER TEST GIT
 }
