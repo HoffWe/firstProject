@@ -1,5 +1,7 @@
 import Lists.AirplaneList;
 import Lists.FlightList;
+import Lists.PassengerList;
+import Lists.TicketList;
 import Menu.UserMenu;
 import Models.Airplane;
 import Models.Flight;
@@ -20,7 +22,10 @@ public class Main {
 
         AirplaneList airplaneList = new AirplaneList();
         FlightList flightList = new FlightList(airplaneList);
-        UserMenu userMenu = new UserMenu(flightList);
+        PassengerList passengerList = new PassengerList();
+        TicketList ticketList = new TicketList(passengerList,flightList);
+
+        UserMenu userMenu = new UserMenu(flightList,ticketList);
         flightList.printList();
         userMenu.menu(flightList);
     }

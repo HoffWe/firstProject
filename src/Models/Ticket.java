@@ -44,4 +44,8 @@ public class Ticket {
   public void setExtraBaggage(boolean extraBaggageVoid){
     this.extraBaggage = extraBaggageVoid;
   }
+
+  public String toString(){
+    return "numer lotu: " + flight.toString();
+  }
 }

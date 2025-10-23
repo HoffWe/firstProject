@@ -1,17 +1,27 @@
 package Menu;
 
 import Lists.FlightList;
+import Lists.TicketList;
 
 import java.util.Scanner;
 
 public class UserMenu {
+    FindMyTickets findMyTickets = new FindMyTickets();
+    TicketList ticketList;
+
     FindFlightMenu findFlightMenu = new FindFlightMenu();
     FlightList flightList;
+
     Scanner sc = new Scanner(System.in);
+
     int choice;
-    public UserMenu(FlightList flightList) {
+
+    public UserMenu(FlightList flightList, TicketList ticketList) {
+
         this.flightList = flightList;
+        this.ticketList = ticketList;
     }
+
     public void menu(FlightList flights) {
         do {
 
@@ -28,6 +38,12 @@ public class UserMenu {
             switch (choice) {
                 case 1:
                     findFlightMenu.menu(flightList);
+                    break;
+
+                case 3:
+                    findMyTickets.menu(ticketList);
+
+
             }
 
         } while (choice != 5);

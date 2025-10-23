@@ -69,4 +69,8 @@ public class TicketList {
     public void buyTicket(int idPassenger, int idFlight) {
         tickets.add(new Ticket(passengers.getPassenger(idPassenger),flights.getAll().get(idFlight), false ));
     }
+
+    public List<Ticket> getTicketsByPassengerId(int id){
+        return tickets.stream().filter(t -> t.getPassenger().getId() == id).toList();
+    }
 }
