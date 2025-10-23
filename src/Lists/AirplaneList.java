@@ -4,6 +4,7 @@ import Models.Airplane;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AirplaneList {
     private List<Airplane> airplanes = new ArrayList<>();
@@ -61,7 +62,32 @@ public class AirplaneList {
         airplanes.add(new Airplane(50, "HondaJet HA-420", 6));
     }
 
+    /*
+        Function<T, R> — jeden argument → wynik
+        BiFunction<T, U, R> — dwa argumenty → wynik
+        UnaryOperator<T> — jeden argument → ten sam typ wyniku
+        BinaryOperator<T> — dwa argumenty → ten sam typ wyniku
+        Supplier<T> — brak argumentów → zwraca wynik
+        Consumer<T> — jeden argument → nic nie zwraca
+        BiConsumer<T, U> — dwa argumenty → nic nie zwraca
+        Predicate<T> — jeden argument → boolean
+        BiPredicate<T, U> — dwa argumenty → boolean
+        */
+
     public List<Airplane> getAll() {
         return airplanes;
+    }
+
+    public Airplane getAirplaneById(int id) {
+        return airplanes.stream().filter(airplane -> airplane.getId() == id).findFirst().orElse(null);
+    }
+
+
+    public Airplane getAirplaneByName(String airplane) {
+        return airplanes.stream().filter(a -> a.getName().equals(airplane)).findFirst().orElse(null);
+    }
+
+    public List<Airplane> getAirplanesByCapacity(int capacity) {
+        return airplanes.stream().filter(a ->a.getCapacity()>=capacity).collect(Collectors.toList());
     }
 }
