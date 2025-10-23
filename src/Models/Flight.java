@@ -104,4 +104,9 @@ public class Flight {
     public void setStand(int stand){
         this.stand = stand;
     }
+
+    public String toString(){
+        return "Odlot z " + departure + '\n' +
+                "Przylot " + destination + '\n';
+    }
 }

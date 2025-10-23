@@ -64,4 +64,8 @@ public class PassengerList {
     public List<Passenger> getAll() {
         return passengers;
     }
+
+    public Passenger getPassenger(int id) {
+        return passengers.get(id);
+    }
 }

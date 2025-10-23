@@ -65,4 +65,12 @@ public class FlightList {
     public List<Flight> getAll() {
         return flights;
     }
+
+    public List<Flight> getFlightsByDepartureAndDestination(String departure, String destination) {
+        return flights.stream().filter(f -> departure.equals(f.getDeparture()) && destination.equals(f.getDestination())).toList();
+    }
+
+    public void printList(){
+        flights.forEach(flight -> System.out.println(flight.toString()));
+    }
 }

@@ -1,3 +1,6 @@
+import Lists.AirplaneList;
+import Lists.FlightList;
+import Menu.UserMenu;
 import Models.Airplane;
 import Models.Flight;
 import Models.Passenger;
@@ -14,19 +17,11 @@ public class Main {
         -map ( kolekcja klucz-wartość, unikalny klucz)
         -queue(dequeue) (kolejka FIFO)
          */
-        Airplane airplane = new Airplane(1,"Samolot1",200);
-        Airplane airplane1 = new Airplane(2,"Samolot2",300);
-        Airplane airplane2 = new Airplane(3,"Samolot3",100);
-        Airplane airplane3 = new Airplane(4,"Samolot4",200);
 
-        List<Airplane> airplanes = new ArrayList<Airplane>();
-
-        airplanes.add(airplane);
-        airplanes.add(airplane1);
-        airplanes.add(airplane2);
-
-        for (Airplane a : airplanes) {
-            System.out.println(a.toString());
-        }
+        AirplaneList airplaneList = new AirplaneList();
+        FlightList flightList = new FlightList(airplaneList);
+        UserMenu userMenu = new UserMenu(flightList);
+        flightList.printList();
+        userMenu.menu(flightList);
     }
 }

@@ -3,15 +3,13 @@ package Models;
 import java.time.LocalDateTime;
 
 public class Ticket {
-  private int id;
   private Passenger passenger;
   private Flight flight;
   private boolean extraBaggage;
 
   //Konstruktor---------------------------------------------------------
-  public Ticket(int a, Passenger passenger, Flight flight, boolean extraBaggage) {
+  public Ticket(Passenger passenger, Flight flight, boolean extraBaggage) {
 
-    this.id = a;
     this.passenger = passenger;
     this.flight = flight;
     this.extraBaggage = extraBaggage;
@@ -19,9 +17,7 @@ public class Ticket {
   }
 
   //Gettery---------------------------------------------------------
-  public int getId(){
-    return id;
-  }
+
 
   public Passenger getPassenger(){
     return passenger;
@@ -36,9 +32,6 @@ public class Ticket {
   }
 
   //Settery---------------------------------------------------------
-  public void setId(int b){
-    this.id = b;
-  }
 
   public void setPassenger(Passenger passengerVoid){
     this.passenger = passengerVoid;
