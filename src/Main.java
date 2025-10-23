@@ -1,4 +1,8 @@
 import Models.Airplane;
+import Models.Flight;
+import Models.Passenger;
+import Models.Ticket;
+
 import java.util.ArrayList;
 import java.util.List;
 

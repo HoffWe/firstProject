@@ -62,5 +62,4 @@ public class Passenger {
         this.phoneNumber = phoneNumber;
     }
 
-    //PASSENGER TEST GIT
 }

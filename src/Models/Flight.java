@@ -1,5 +1,6 @@
 package Models;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Flight {
@@ -9,10 +10,9 @@ public class Flight {
     private String departure;
     private LocalDateTime departureTime;
     private LocalDateTime arrivalTime;
-    private int duration;
+    private Duration duration;
     private int gate;
     private int stand;
-
 
     //konstruktor
 
@@ -27,7 +27,7 @@ public class Flight {
         this.arrivalTime = arrivalTime;
         this.gate = gate;
         this.stand = stand;
-
+        this.duration = Duration.between(departureTime, arrivalTime);
     }
 
     //gettery
@@ -64,6 +64,10 @@ public class Flight {
         return stand;
     }
 
+    public Duration getDuration(){
+        return duration;
+    }
+
 
     //settery
 
@@ -85,10 +89,12 @@ public class Flight {
 
     public void setArrivalTime(LocalDateTime arrivalTime){
         this.arrivalTime = arrivalTime;
+        this.duration = Duration.between(departureTime, arrivalTime);
     }
 
     public void setDepartureTime(LocalDateTime departureTime){
         this.departureTime = departureTime;
+        this.duration = Duration.between(departureTime, arrivalTime);
     }
 
     public void setGate(int gate){
@@ -98,5 +104,4 @@ public class Flight {
     public void setStand(int stand){
         this.stand = stand;
     }
-
 }
