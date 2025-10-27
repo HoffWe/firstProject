@@ -1,16 +1,14 @@
 package Models;
 
 public class Passenger {
-    private int passengerId;
     private String name;
     private String surname;
     private String email;
     private int phoneNumber;
 
     //konstruktor-----------------------------------------------------------------------------------
-    public Passenger(int idPassenger, String name, String surname, String email, int phoneNumber){
+    public Passenger(String name, String surname, String email, int phoneNumber){
 
-        this.passengerId = idPassenger;
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -19,10 +17,6 @@ public class Passenger {
     }
 
 //gettery-----------------------------------------------------------------------------------
-
-    public int getId(){
-        return passengerId;
-    }
 
     public String  getName(){
         return name;
@@ -41,10 +35,6 @@ public class Passenger {
     }
 
 //settery-----------------------------------------------------------------------------------
-
-    public void setId(int id){
-        this.passengerId = id;
-    }
 
     public void setName(String name){
         this.name = name;
