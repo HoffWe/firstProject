@@ -27,17 +27,9 @@ public class FindFlightMenu {
             System.out.println("Wyszukaj ponownie nacisnij: 1");
             System.out.println("Wyjcie nacisnij: 2");
             choice = sc.nextInt();
-
-            switch (choice){
-                case 1: menu(fl);
-                break;
-                default:
-                    break;
-            }
+            sc.nextLine();
 
         }while(choice != 2);
-
-
 
     }
 
