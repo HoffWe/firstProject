@@ -79,7 +79,7 @@ public class AirplaneList {
     }
 
     public Airplane getAirplaneById(int id) {
-        return airplanes.stream().filter(airplane -> airplane.getId() == id).findFirst().orElse(null);
+        return airplanes.get(id);
     }
 
 
