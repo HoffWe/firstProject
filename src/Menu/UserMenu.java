@@ -1,6 +1,7 @@
 package Menu;
 
 import Lists.FlightList;
+import Lists.PassengerList;
 import Lists.TicketList;
 
 import java.util.Scanner;
@@ -8,16 +9,20 @@ import java.util.Scanner;
 public class UserMenu {
     FindMyTickets findMyTickets = new FindMyTickets();
     TicketList ticketList;
+    PassengerList passengerList;
 
     FindFlightMenu findFlightMenu = new FindFlightMenu();
+    ReturnTickets returnTickets = new ReturnTickets();
     FlightList flightList;
+
 
     Scanner sc = new Scanner(System.in);
 
     int choice;
 
-    public UserMenu(FlightList flightList, TicketList ticketList) {
+    public UserMenu(FlightList flightList, TicketList ticketList, PassengerList passengerList) {
 
+        this.passengerList = passengerList;
         this.flightList = flightList;
         this.ticketList = ticketList;
     }
@@ -42,6 +47,11 @@ public class UserMenu {
 
                 case 3:
                     findMyTickets.menu(ticketList);
+                    break;
+
+                case 4:
+                    returnTickets.menu(ticketList,passengerList);
+                    break;
 
 
             }

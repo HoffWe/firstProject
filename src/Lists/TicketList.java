@@ -1,5 +1,6 @@
 package Lists;
 
+import Models.Passenger;
 import Models.Ticket;
 
 import java.util.ArrayList;
@@ -10,6 +11,10 @@ public class TicketList {
     private PassengerList passengers;
     private FlightList flights;
     public TicketList(PassengerList passengerList, FlightList flightList) {
+
+        this.passengers = passengerList;
+        this.flights = flightList;
+
         tickets.add(new Ticket(passengerList.getAll().get(0), flightList.getAll().get(0), true));
         tickets.add(new Ticket(passengerList.getAll().get(1), flightList.getAll().get(1), false));
         tickets.add(new Ticket(passengerList.getAll().get(2), flightList.getAll().get(2), true));
@@ -71,6 +76,11 @@ public class TicketList {
     }
 
     public List<Ticket> getTicketsByPassengerId(int id){
-        return tickets.stream().filter(t -> t.getPassenger().getId() == id).toList();
+        Passenger ps = passengers.getPassenger(id);
+        return tickets.stream().filter(t -> t.getPassenger().equals(ps)).toList();
+    }
+
+    public void deleteTicket(Ticket ticket){
+        tickets.remove(ticket);
     }
 }
