@@ -83,4 +83,8 @@ public class TicketList {
     public void deleteTicket(Ticket ticket){
         tickets.remove(ticket);
     }
+
+    public void addTicket(Ticket ticket){
+        tickets.add(ticket);
+    }
 }

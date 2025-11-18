@@ -46,6 +46,6 @@ public class Ticket {
   }
 
   public String toString(){
-    return "numer lotu: " + flight.toString();
+    return flight.toString();
   }
 }

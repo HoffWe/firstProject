@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Flight {
-    private int id;
     private Airplane airplane;
     private String destination;
     private String departure;
@@ -16,10 +15,9 @@ public class Flight {
 
     //konstruktor
 
-    public Flight(int idFlight, Airplane airplane, String destination, String departure, LocalDateTime departureTime, LocalDateTime arrivalTime,
+    public Flight(Airplane airplane, String destination, String departure, LocalDateTime departureTime, LocalDateTime arrivalTime,
                   int gate, int stand) {
 
-        this.id = idFlight;
         this.airplane = airplane;
         this.destination = destination;
         this.departure = departure;
@@ -32,9 +30,6 @@ public class Flight {
 
     //gettery
 
-    public int getId(){
-        return id;
-    }
 
     public Airplane getAirplane(){
         return airplane;
@@ -71,9 +66,6 @@ public class Flight {
 
     //settery
 
-    public void setId(int id){
-        this.id = id;
-    }
 
     public void setAirplane(Airplane airplane){
         this.airplane = airplane;

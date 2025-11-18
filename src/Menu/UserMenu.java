@@ -15,6 +15,7 @@ public class UserMenu {
     ReturnTickets returnTickets = new ReturnTickets();
     FlightList flightList;
 
+    BuyTicketMenu buyTicketMenu = new BuyTicketMenu();
 
     Scanner sc = new Scanner(System.in);
 
@@ -43,6 +44,10 @@ public class UserMenu {
             switch (choice) {
                 case 1:
                     findFlightMenu.menu(flightList);
+                    break;
+
+                case 2:
+                    buyTicketMenu.menu(passengerList,flightList,ticketList);
                     break;
 
                 case 3:

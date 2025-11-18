@@ -23,6 +23,7 @@ public class ReturnTickets {
 
         List<Ticket> ticket = tl.getTicketsByPassengerId(id);
 
+
         ticket.forEach(t -> System.out.println(t.toString()));
 
         System.out.println("Podaj numer id (listy) biletu ktory chcesz usunac");
