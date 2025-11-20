@@ -84,7 +84,18 @@ public class TicketList {
         tickets.remove(ticket);
     }
 
-    public void addTicket(Ticket ticket){
-        tickets.add(ticket);
+        public void addTicket(Ticket ticket){
+
+            long booked = tickets.stream()
+                    .filter(t -> t.getFlight().equals(ticket.getFlight()))
+                    .count();
+            int capacity = ticket.getFlight().getAirplane().getCapacity();
+            if (booked < capacity) {
+                tickets.add(ticket);
+                System.out.println("Bilet dodany. Wolnych miejsc: "
+                        + (capacity - booked -1));//wolne miejsca jako debug, do usunięcia po sprawdzeniu
+            } else {
+                System.out.println("Brak wolnych miejsc na ten lot.");
+            }
     }
 }
